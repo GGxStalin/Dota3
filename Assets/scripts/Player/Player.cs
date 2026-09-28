@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     NavMeshAgent agent;
 
 
-    [SerializeField] State currentState = State.none;
+    [SerializeField] State currentState = State.move;
     Ray ray;
     RaycastHit hit;
     Vector3 targetPos;

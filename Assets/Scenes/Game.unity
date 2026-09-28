@@ -2838,6 +2838,17 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3f9e917a684671b43bef7d82ded8483b, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 1b2cdd42c30a7fc48a645926ba030a2d, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+        'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'run'\n\tFrom
+        animation clip 'attack'\n\tFrom animation clip 'deadth'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2854,6 +2865,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2cdd42c30a7fc48a645926ba030a2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1901280995}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b2cdd42c30a7fc48a645926ba030a2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1901281000}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2cdd42c30a7fc48a645926ba030a2d, type: 3}
 --- !u!1 &624291636
 GameObject:
@@ -7947,7 +7961,7 @@ MonoBehaviour:
   playerMove: {fileID: 1901280997}
   playerAttack: {fileID: 1901280996}
   rightClickEffect: {fileID: 5137123306192418792, guid: 5a8d99fb95262ea458a7b580f2a1611c, type: 3}
-  currentState: 0
+  currentState: 1
 --- !u!114 &1901280996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7976,6 +7990,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   stopDistance: 6
+--- !u!114 &1901281000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901280991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40344cab39a126c4f802c45166b6c537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatorController
 --- !u!1 &1919703396
 GameObject:
   m_ObjectHideFlags: 0

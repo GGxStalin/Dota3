@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] PlayerMove playerMove;
     [SerializeField] PlayerAttack playerAttack;
+    [SerializeField] GameObject rightClickEffect;
     HPManager currentTarget = null;
     NavMeshAgent agent;
 
@@ -37,8 +38,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                Instantiate(rightClickEffect, hit.point, Quaternion.Euler(90, 0, 0));
+
                 targetPos = hit.point;
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {

@@ -24,34 +24,40 @@ public class DotaCamera : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            transform.position = target.position - offset;
-        }
+        JustFollowTarget();
+        //if (Input.GetKeyDown(KeyCode.F1))
+        //{
+        //    transform.position = target.position - offset;
+        //}
 
-        float scrollValue = Input.GetAxis("Mouse ScrollWheel");
-        float distanceToGround;
+        //float scrollValue = Input.GetAxis("Mouse ScrollWheel");
+        //float distanceToGround;
 
-        ray = Camera.main.ScreenPointToRay(transform.forward * rayDistance);
+        //ray = Camera.main.ScreenPointToRay(transform.forward * rayDistance);
 
-        if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
-        {
-            distanceToGround = Vector3.Distance(transform.position, hit.point);
-        }
-        else
-        {
-            distanceToGround = 50; //костыль
-        }
+        //if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
+        //{
+        //    distanceToGround = Vector3.Distance(transform.position, hit.point);
+        //}
+        //else
+        //{
+        //    distanceToGround = 50; //костыль
+        //}
 
-        if (scrollValue > 0 && distanceToGround > zoomUpLimit)
-        {
-            transform.Translate(transform.forward * Time.deltaTime * zoomSpeed, Space.World);
-        }
-        if (scrollValue < 0 && distanceToGround < zoomDownLimit)
-        {
-            transform.Translate(transform.forward * Time.deltaTime * zoomSpeed * -1, Space.World);
-        }
+        //if (scrollValue > 0 && distanceToGround > zoomUpLimit)
+        //{
+        //    transform.Translate(transform.forward * Time.deltaTime * zoomSpeed, Space.World);
+        //}
+        //if (scrollValue < 0 && distanceToGround < zoomDownLimit)
+        //{
+        //    transform.Translate(transform.forward * Time.deltaTime * zoomSpeed * -1, Space.World);
+        //}
 
+    }
+
+    private void JustFollowTarget()
+    {
+        transform.position = target.position - offset;
     }
 
     //void LateUpdate()

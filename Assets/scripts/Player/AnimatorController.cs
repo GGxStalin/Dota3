@@ -6,7 +6,8 @@ public class AnimatorController : MonoBehaviour
 {
 
     Animator animator;
-    List<string> animParams = new List<string>{ "idle", "run", "attack", "death" };
+    List<string> animParams = new List<string>{ "idle", "run", "attack", "death", 
+        "skill1", "skill2", "skill3", "skill4", "skill5", "skill6"};
 
     private void Start()
     {

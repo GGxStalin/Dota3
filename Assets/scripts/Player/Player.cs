@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject rightClickEffect;
     HPManager currentTarget = null;
     NavMeshAgent agent;
+    AnimatorController animatorController;
 
 
     [SerializeField] State currentState = State.move;
@@ -30,31 +31,58 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        animatorController = GetComponent<AnimatorController>();
         playerMove = GetComponent<PlayerMove>();
         playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        //if (Input.GetMouseButtonDown(1))
+        //{
+
+        //    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+        //    {
+        //        Instantiate(rightClickEffect, hit.point, Quaternion.Euler(90, 0, 0));
+
+        //        targetPos = hit.point;
+        //        if (hit.collider.gameObject.CompareTag("Enemy"))
+        //        {
+        //            currentState = State.attack;
+        //        }
+        //        else
+        //        {
+        //            currentState = State.move;
+        //        }
+        //    }
+        //}
+        //HandleStates();
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                Instantiate(rightClickEffect, hit.point, Quaternion.Euler(90, 0, 0));
-
-                targetPos = hit.point;
-                if (hit.collider.gameObject.CompareTag("Enemy"))
-                {
-                    currentState = State.attack;
-                }
-                else
-                {
-                    currentState = State.move;
-                }
-            }
+            animatorController.SetParam("skill1");
         }
-        HandleStates();
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            animatorController.SetParam("skill2");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            animatorController.SetParam("skill3");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            animatorController.SetParam("skill4");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            animatorController.SetParam("skill5");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            animatorController.SetParam("skill6");
+        }
     }
 
 
